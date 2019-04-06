@@ -11,7 +11,8 @@
     "gulp:clear-and-copy": "npm run gulp -- clear-and-copy",
     "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
     "build": "webpack --mode development",
-    "test": "echo Hello There!"
+    "test": "echo Hello There!",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,15 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/github": "^5.2.10",
     "@types/gulp": "^4.0.6",
     "@types/jquery": "^3.3.29",
     "@types/node": "^11.13.0",
     "babel-loader": "^8.0.5",
+    "commitizen": "^3.0.7",
     "css-loader": "^2.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "del": "^4.1.0",
     "gulp": "^4.0.0",
     "handlebars": "^4.1.1",
@@ -49,6 +54,11 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
