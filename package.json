@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "The source of the official nodewell website.",
   "private": true,
   "main": "index.js",
@@ -12,11 +12,12 @@
     "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
     "build": "webpack --mode development",
     "test": "echo Hello There!",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodewell/website.git"
+    "url": "https://github.com/nodewell/website.git"
   },
   "keywords": [],
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
