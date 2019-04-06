@@ -2,9 +2,7 @@
   "name": "website",
   "version": "0.0.0-development",
   "description": "The source of the official nodewell website.",
-  "private": true,
   "main": "index.js",
-
   "scripts": {
     "gulp": "gulp --gulpfile scripts/index.js",
     "gulp:clear-dist": "npm run gulp -- clear-dist",
@@ -33,8 +31,6 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/github": "^5.2.10",
     "@types/gulp": "^4.0.6",
     "@types/jquery": "^3.3.29",
     "@types/node": "^11.13.0",
