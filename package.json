@@ -4,6 +4,7 @@
   "description": "The source of the official nodewell website.",
   "private": true,
   "main": "index.js",
+
   "scripts": {
     "gulp": "gulp --gulpfile scripts/index.js",
     "gulp:clear-dist": "npm run gulp -- clear-dist",
