@@ -1,0 +1,58 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "The source of the official nodewell website.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp --gulpfile scripts/index.js",
+    "gulp:clear-dist": "npm run gulp -- clear-dist",
+    "gulp:copy-vendors": "npm run gulp -- copy-vendors",
+    "gulp:clear-and-copy": "npm run gulp -- clear-and-copy",
+    "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
+    "build": "webpack --mode development",
+    "test": "echo Hello There!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodewell/website.git"
+  },
+  "keywords": [],
+  "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodewell/website/issues"
+  },
+  "homepage": "https://github.com/nodewell/website#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@types/gulp": "^4.0.6",
+    "@types/jquery": "^3.3.29",
+    "@types/node": "^11.13.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "handlebars": "^4.1.1",
+    "handlebars-loader": "^1.7.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "semantic-release": "^15.13.3",
+    "standard": "^12.0.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.15.0"
+  }
+}

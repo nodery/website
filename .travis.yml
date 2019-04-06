@@ -3,8 +3,19 @@ language: node_js
 node_js:
   - lts/*
 
+cache:
+  directories:
+    - ~/.npm
+
 jobs:
   include:
+    - stage: test
+      script:
+        - npm run test
+      # before_script: greenkeeper-lockfile-update
+      # after_script: greenkeeper-lockfile-upload
+      # after_success: npm run codecov
+
     # Define the release stage that runs semantic-release
     - stage: release
       node_js: lts/*
