@@ -9,8 +9,8 @@
     "gulp:copy-vendors": "npm run gulp -- copy-vendors",
     "gulp:clear-and-copy": "npm run gulp -- clear-and-copy",
     "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
-    "build": "webpack --mode development",
-    "test": "echo Hello There!",
+    "build": "echo NPM BUILD",
+    "test": "echo NPM TEST",
     "gulp:deploy": "echo DEPLOYEEE!",
     "commit": "git-cz",
     "semantic-release": "semantic-release"
