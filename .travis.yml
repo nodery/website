@@ -9,7 +9,7 @@ notifications:
 cache:
   npm: true
   directories:
-    - ./dist
+    - ./build
 
 jobs:
   include:
