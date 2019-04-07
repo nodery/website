@@ -1,55 +1,77 @@
 const gulp = require('gulp')
 const path = require('../../data/path')
 const travis = require('is-travis')
+const execa = require('execa')
 const directory = require('directory-exists')
 const glob = require('fast-glob')
-const log = require('fancy-log')
-const color = require('ansi-colors')
+const delay = require('delay')
+const semver = require('semver')
 
-const execa = require('execa')
+gulp.task('deploy:prepare-repository', async () => {
+  // check CI environment
+  if (!travis) {
+    throw Error('Script can be executed only in Travis CI.')
+  }
 
-console.log(process.env)
-
-gulp.task('deploy', async () => {
+  // check token
   const token = process.env.GH_TOKEN
 
   if (!token) {
     throw Error('GitHub token is not present.')
   }
 
+  // clone repository into a deploy directory
   const repository = `https://${token}@github.com/nodewell/nodewell.github.io.git`
 
-  // const { stdout } = await execa('git', ['clone', repository], { cwd: path.deploy })
-  // const { stdout } = await execa('git', ['clone', repository, path.deploy])
-  // console.log(stdout)
+  await execa('git', ['clone', repository, path.deploy])
+})
 
-  // await execa('git', ['clone', repository, path.deploy])
-
-  // if (!travis) {
-  //   throw Error('Script can be executed only in Travis CI.')
-  // }
-
+gulp.task('deploy:prepare-content', async () => {
+  // check build directory
   const exists = await directory(path.build)
 
   if (!exists) {
     throw Error('Build directory doesn\'t exist.')
   }
 
-  // const files = await glob('**/*.*', { cwd: path.build })
-  const files = await glob(path.build + '/**/*.*')
+  // gather files
+  const files = await glob('**/*.*', { cwd: path.build })
 
   if (files.length === 0) {
     throw Error('Build directory is empty.')
   }
 
-  console.log(files)
+  // clear deploy repository (delete all files)
+  await execa('git', ['rm', '-r', '*'], { cwd: path.deploy })
 
-  // const dir = await glob(path.build + '/')
-  // console.log(dir)
-
-  // console.log(process.argv)
-  // log.info('Check "build" directory' + color.cyan('YEAH!'))
-
-  // log.info(process.argv)
+  // copy build files to deploy repository
   await gulp
+    .src(files, { cwd: path.build })
+    .pipe(gulp.dest(path.deploy))
+
+  // wait for a while for the files to be completely copied
+  await delay(1000)
+
+  // process passed next version number
+  const arg = process.argv[process.argv.length - 1] || ''
+  const version = arg.substring(2)
+
+  if (semver.valid(version) === null) {
+    throw Error('Version is invalid.')
+  }
+
+  // commit files with next version
+  await execa('git', ['add', '.'], { cwd: path.deploy })
+  await execa('git', ['commit', '-m', `chore(release): ${version}`], { cwd: path.deploy })
 })
+
+gulp.task('deploy:push-content', async () => {
+  // push content to remote rpository
+  await execa('git', ['push', '-u', 'origin', 'master'], { cwd: path.deploy })
+})
+
+gulp.task('deploy', gulp.series(
+  'deploy:prepare-repository',
+  'deploy:prepare-content',
+  'deploy:push-content'
+))
