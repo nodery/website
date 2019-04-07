@@ -1,7 +1,7 @@
 {
   "name": "@nodewell/website",
   "version": "0.0.0-development",
-  "description": "The source of the official nodewell website.",
+  "description": "The source of the official @nodewell website.",
   "main": "index.js",
   "private": true,
   "scripts": {
