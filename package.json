@@ -1,8 +1,9 @@
 {
   "name": "@nodewell/website",
-  "version": "1.0.6",
+  "version": "0.0.0-development",
   "description": "The source of the official nodewell website.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "gulp": "gulp --gulpfile scripts/index.js",
     "gulp:clear-dist": "npm run gulp -- clear-dist",
@@ -35,7 +36,6 @@
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/exec": "^3.3.2",
-    "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/release-notes-generator": "^7.1.4",
     "@types/gulp": "^4.0.6",
