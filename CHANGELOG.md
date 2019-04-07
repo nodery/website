@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/nodewell/website/compare/v1.0.8...v1.0.9) (2019-04-07)
+
+
+### Bug Fixes
+
+* **release:** tinker with semantic release ([afaea81](https://github.com/nodewell/website/commit/afaea81))
+
 ## [1.0.8](https://github.com/nodewell/website/compare/v1.0.7...v1.0.8) (2019-04-07)
 
 
