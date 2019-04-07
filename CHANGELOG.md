@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/nodewell/website/compare/v1.1.2...v1.1.3) (2019-04-07)
+
+
+### Bug Fixes
+
+* **release:** tinker with release ([5f1c534](https://github.com/nodewell/website/commit/5f1c534))
+
 ## [1.1.2](https://github.com/nodewell/website/compare/v1.1.1...v1.1.2) (2019-04-07)
 
 
