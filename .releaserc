@@ -9,7 +9,7 @@
     "@semantic-release/github",
     ["@semantic-release/exec", {
       "shell": true,
-      "successCmd": "./scripts/deploy.sh"
+      "successCmd": "npm run deploy"
     }]
   ]
 }

@@ -11,7 +11,7 @@
     "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
     "build": "echo NPM BUILD",
     "test": "echo NPM TEST",
-    "gulp:deploy": "echo DEPLOYEEE!",
+    "deploy": "echo DEPLOYEEE!",
     "commit": "git-cz",
     "semantic-release": "semantic-release"
   },
