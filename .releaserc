@@ -3,10 +3,10 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    "@semantic-release/git",
     "@semantic-release/github",
+    "@semantic-release/git",
     ["@semantic-release/exec", {
-      "successCmd": "npm run deploy"
+      "successCmd": "npm run deploy -- --${nextRelease.version}"
     }]
   ]
 }
