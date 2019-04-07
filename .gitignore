@@ -85,7 +85,7 @@ typings/
 .dynamodb/
 
 # IDE directories
-.vscode
+.vscode/
 
 # dist build output
-dist
+dist/
