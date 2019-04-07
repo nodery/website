@@ -1,12 +1,14 @@
+'use strict'
+
 const path = require('path')
-// const webpack = require('webpack')
+const data = require('./data')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/scripts/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: data.path.build,
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -19,7 +21,7 @@ module.exports = {
         loader: 'handlebars-loader',
         query: {
           helperDirs: [
-            path.resolve(__dirname, 'src/helpers')
+            path.join(data.path.root, '/src/helpers')
           ]
         }
       },
@@ -52,25 +54,16 @@ module.exports = {
     ]
   },
   plugins: [
-    /*
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        handlebarsLoader: {}
-      }
-    }),
-    */
     new HtmlWebpackPlugin({
       hash: true,
-      template: './src/markup/index.hbs',
-      templateParameters: require('./data'),
-      filename: path.resolve(__dirname, 'dist/index.html')
+      template: path.join(data.path.root, '/src/markup/index.hbs'),
+      templateParameters: data,
+      filename: path.join(data.path.build, '/index.html')
     }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.css'
-    })
+    new MiniCssExtractPlugin({ filename: 'styles.css' })
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: data.path.build,
     writeToDisk: true,
     compress: true
   }

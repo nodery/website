@@ -1,5 +1,7 @@
+'use strict'
+
 const gulp = require('gulp')
-const paths = require('./paths')
+const path = require('../../data/path')
 
 gulp.task('copy-vendors', async () => {
   await gulp
@@ -8,6 +10,6 @@ gulp.task('copy-vendors', async () => {
       '/bootstrap/dist/js/bootstrap.min.*',
       '/jquery/dist/jquery.min.*',
       '/popper.js/dist/umd/popper.min.*'
-    ].map(path => `${paths.node_modules}${path}`))
-    .pipe(gulp.dest(`${paths.dist}/vendors`))
+    ].map(p => `${path.node_modules}${p}`))
+    .pipe(gulp.dest(`${path.build}/vendors`))
 })
