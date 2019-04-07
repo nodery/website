@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/nodewell/website/compare/v1.1.0...v1.1.1) (2019-04-07)
+
+
+### Bug Fixes
+
+* **release:** tinker with release ([cae2395](https://github.com/nodewell/website/commit/cae2395))
+
 # [1.1.0](https://github.com/nodewell/website/compare/v1.0.10...v1.1.0) (2019-04-07)
 
 
