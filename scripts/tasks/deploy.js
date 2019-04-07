@@ -6,7 +6,6 @@ const glob = require('fast-glob')
 const log = require('fancy-log')
 const color = require('ansi-colors')
 
-const git = require('simple-git/promise')
 const execa = require('execa')
 
 console.log(process.env)
