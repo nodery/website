@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/nodewell/website/compare/v1.1.1...v1.1.2) (2019-04-07)
+
+
+### Bug Fixes
+
+* **release:** tinker with semantic release ([5408fc8](https://github.com/nodewell/website/commit/5408fc8))
+* **release:** tinker with semantic release ([90cc917](https://github.com/nodewell/website/commit/90cc917))
+
 ## [1.1.1](https://github.com/nodewell/website/compare/v1.1.0...v1.1.1) (2019-04-07)
 
 
