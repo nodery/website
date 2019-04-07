@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/nodewell/website/compare/v1.0.10...v1.1.0) (2019-04-07)
+
+
+### Features
+
+* **markup:** add initial Handlebars helpers ([722240a](https://github.com/nodewell/website/commit/722240a))
+* **markup:** add initial markup ([f92562a](https://github.com/nodewell/website/commit/f92562a))
+* **scripts:** add initial JavaScript files ([6c37696](https://github.com/nodewell/website/commit/6c37696))
+* **styles:** add initial styles ([63de713](https://github.com/nodewell/website/commit/63de713))
+
 ## [1.0.10](https://github.com/nodewell/website/compare/v1.0.9...v1.0.10) (2019-04-07)
 
 
