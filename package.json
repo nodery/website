@@ -9,8 +9,8 @@
     "gulp:clear-dist": "npm run gulp -- clear-dist",
     "gulp:copy-vendors": "npm run gulp -- copy-vendors",
     "gulp:clear-and-copy": "npm run gulp -- clear-and-copy",
-    "start": "npm run --silent gulp:clear-and-copy && webpack-dev-server",
-    "build": "echo NPM BUILD",
+    "start": "npm run gulp:clear-and-copy && webpack-dev-server",
+    "build": "npm run gulp:clear-dist && webpack --mode production",
     "test": "echo NPM TEST",
     "deploy": "npm run gulp -- deploy",
     "commit": "git-cz"
