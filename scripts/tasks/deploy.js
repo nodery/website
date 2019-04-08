@@ -1,11 +1,13 @@
 const gulp = require('gulp')
-const path = require('../../data/path')
 const travis = require('is-travis')
 const execa = require('execa')
 const directory = require('directory-exists')
 const glob = require('fast-glob')
 const delay = require('delay')
 const semver = require('semver')
+
+const deploy = require('../../data/config/deploy')
+const path = require('../../data/path')
 
 gulp.task('deploy:prepare-repository', async () => {
   // check CI environment
@@ -21,9 +23,7 @@ gulp.task('deploy:prepare-repository', async () => {
   }
 
   // clone repository into a deploy directory
-  const repository = `https://${token}@github.com/nodewell/nodewell.github.io.git`
-
-  await execa('git', ['clone', repository, path.deploy])
+  await execa('git', ['clone', `https://${token}@${deploy.url}`, path.deploy])
 })
 
 gulp.task('deploy:prepare-content', async () => {
@@ -50,7 +50,7 @@ gulp.task('deploy:prepare-content', async () => {
     .pipe(gulp.dest(path.deploy))
 
   // wait for a while for the files to be completely copied
-  await delay(1000)
+  await delay(2500)
 
   // process passed next version number
   const arg = process.argv[process.argv.length - 1] || ''
@@ -62,11 +62,11 @@ gulp.task('deploy:prepare-content', async () => {
 
   // commit files with next version
   await execa('git', ['add', '.'], { cwd: path.deploy })
-  await execa('git', ['commit', '-m', `chore(release): ${version}`], { cwd: path.deploy })
+  await execa('git', ['commit', '-m', deploy.message({ version })], { cwd: path.deploy })
 })
 
 gulp.task('deploy:push-content', async () => {
-  // push content to remote rpository
+  // push content to remote repository
   await execa('git', ['push', '-u', 'origin', 'master'], { cwd: path.deploy })
 })
 
