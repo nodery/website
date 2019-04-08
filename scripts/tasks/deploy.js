@@ -1,3 +1,5 @@
+'use strict'
+
 const gulp = require('gulp')
 const travis = require('is-travis')
 const execa = require('execa')

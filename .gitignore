@@ -88,5 +88,5 @@ typings/
 .vscode/
 
 # release directories
-build/
-deploy/
+/build
+/deploy
