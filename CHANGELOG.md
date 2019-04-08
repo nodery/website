@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/nodewell/website/compare/v1.1.3...v1.1.4) (2019-04-08)
+
+
+### Bug Fixes
+
+* **release:** tinker with semantic release ([cc9dcbd](https://github.com/nodewell/website/commit/cc9dcbd))
+* **release:** tinker with semantic release ([fcb9cef](https://github.com/nodewell/website/commit/fcb9cef))
+
 ## [1.1.3](https://github.com/nodewell/website/compare/v1.1.2...v1.1.3) (2019-04-07)
 
 
