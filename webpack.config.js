@@ -10,11 +10,23 @@ module.exports = {
   output: {
     path: data.path.build,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'assets/scripts.js'
   },
   devtool: 'source-map',
   module: {
     rules: [
+      // Image processing
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/images/[name].[ext]'
+            }
+          }
+        ]
+      },
       // Markup processing
       {
         test: /\.hbs$/,
@@ -60,7 +72,7 @@ module.exports = {
       templateParameters: data,
       filename: path.join(data.path.build, '/index.html')
     }),
-    new MiniCssExtractPlugin({ filename: 'styles.css' })
+    new MiniCssExtractPlugin({ filename: 'assets/styles.css' })
   ],
   devServer: {
     contentBase: data.path.build,
