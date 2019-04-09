@@ -1,9 +1,12 @@
 'use strict'
 
 const path = require('path')
-const data = require('./data')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const data = require('./data')
+const brand = require('@nodewell/brand')
+const getData = require('./src/styles/helpers/getData')
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -52,7 +55,11 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              // data: `$COLOR: green`,
+              functions: {
+                ...getData(brand)
+              }
             }
           }
         ]
