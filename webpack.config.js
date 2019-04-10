@@ -36,7 +36,7 @@ module.exports = {
         loader: 'handlebars-loader',
         query: {
           helperDirs: [
-            path.join(data.path.root, '/src/helpers')
+            path.join(data.path.root, '/src/markup/helpers')
           ]
         }
       },
