@@ -1,3 +1,18 @@
+# [1.2.0](https://github.com/nodewell/website/compare/v1.1.4...v1.2.0) (2019-04-12)
+
+
+### Bug Fixes
+
+* **markup:** fix brand image, logo displays for different sizes ([59c462b](https://github.com/nodewell/website/commit/59c462b))
+* **styles:** uncomment background color temporarily ([96f0bce](https://github.com/nodewell/website/commit/96f0bce))
+
+
+### Features
+
+* **images:** add initial brand assets ([75bf480](https://github.com/nodewell/website/commit/75bf480))
+* **markup:** add initial project and footer layout ([2a40fd3](https://github.com/nodewell/website/commit/2a40fd3))
+* **styles:** add get-data sass function with initial colors ([fff265b](https://github.com/nodewell/website/commit/fff265b))
+
 ## [1.1.4](https://github.com/nodewell/website/compare/v1.1.3...v1.1.4) (2019-04-08)
 
 
